@@ -1,4 +1,4 @@
-/* v1.1 Paper White Mono by 6788-00 */
+/* v2.1 Paper White Mono by 6788-00 */
 /* https://6788-00.tumblr.com/ */
 
 /* Color Palette                    */
@@ -110,9 +110,9 @@ QToolBar QMenu {
 
 QToolButton {
 	/* Toolbar Buttons */
-	padding: 4px 6px;
+	padding: 4px;
 	border-radius: 10px;
-	margin: 8px 2px 16px 2px;
+	margin: 6px;
 }
 
 QToolButton:hover {
@@ -135,51 +135,49 @@ QToolButton:menu-indicator {
 
 /* Toolbar Button Icons */
 
-#actionChange_Game,
-#actionInstallMod,
-#actionNexus,
-#actionAdd_Profile,
-#actionModify_Executables,
-#actionTool,
-#actionSettings,
-#actionProblems,
-#actionUpdate,
-#actionHelp {
-	qproperty-icon: none;
-	font-weight: bold;
-	font-size: 14px;
-}
-
-#actionChange_Game:hover,
-#actionInstallMod:hover,
-#actionNexus:hover,
-#actionAdd_Profile:hover,
-#actionModify_Executables:hover,
-#actionTool:hover,
-#actionSettings:hover,
-#actionProblems:hover,
-#actionUpdate:hover,
-#actionHelp:hover {
-	qproperty-icon: none;
-	color: #000;
-}
-
-#actionChange_Game:pressed,
-#actionInstallMod:pressed,
-#actionNexus:pressed,
-#actionAdd_Profile:pressed,
-#actionModify_Executables:pressed,
-#actionTool:pressed,
-#actionSettings:pressed,
-#actionProblems:pressed,
-#actionUpdate:pressed,
-#actionHelp:pressed {
-	qproperty-icon: none;
-	color: #FFF;
-}
-
 #actionChange_Game {
-	qproperty-text: "Instances";
+	qproperty-icon: url(./Paper/Mono/White/Toolbar/instances.svg);
+}
+
+#actionInstallMod {
+	qproperty-icon: url(./Paper/Mono/White/Toolbar/archives.svg);
+}
+
+#actionNexus {
+	qproperty-icon: url(./Paper/Mono/White/Toolbar/nexus.svg);
+}
+
+#actionAdd_Profile {
+	qproperty-icon: url(./Paper/Mono/White/Toolbar/profiles.svg);
+}
+
+#actionModify_Executables {
+	qproperty-icon: url(./Paper/Mono/White/Toolbar/executables.svg);
+}
+
+#actionTool {
+	qproperty-icon: url(./Paper/Mono/White/Toolbar/tools.svg);
+}
+
+#actionSettings {
+	qproperty-icon: url(./Paper/Mono/White/Toolbar/settings.svg);
+}
+
+#actionEndorseMO {
+	qproperty-icon: url(./Paper/Mono/White/Toolbar/endorse.svg);
+}
+
+#actionProblems,
+#actionNotifications {
+	qproperty-icon: url(./Paper/Mono/White/Toolbar/problems.svg);
+}
+
+#actionUpdate {
+	qproperty-icon: url(./Paper/Mono/White/Toolbar/update.svg);
+}
+
+#actionHelp {
+	qproperty-icon: url(./Paper/Mono/White/Toolbar/help.svg);
 }
 
 /* Group Boxes */
