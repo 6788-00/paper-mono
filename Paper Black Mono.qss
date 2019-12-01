@@ -1,4 +1,4 @@
-/* v1.0 Paper Black Mono by 6788-00 */
+/* v1.1 Paper Black Mono by 6788-00 */
 /* https://6788-00.tumblr.com/ */
 
 /* Color Palette                    */
@@ -17,6 +17,7 @@ QWidget {
 	background: #000;
 	font-size: 13px;
 	color: #D3D3D3;
+	border: 0;
 }
 
 QWidget:disabled {
@@ -82,6 +83,11 @@ QToolBar {
 	margin: 0 12px;
 }
 
+QToolBar::handle {
+	height: 0;
+	border: 1px solid #3D3D3D;
+}
+
 QToolBar QWidget {
 	background: transparent;
 }
@@ -93,9 +99,9 @@ QToolBar QMenu {
 
 QToolButton {
 	/* Toolbar Buttons */
-	padding: 4px 6px;
+	padding: 4px;
 	border-radius: 10px;
-	margin: 8px 2px 16px 2px;
+	margin: 6px;
 }
 
 QToolButton:hover {
@@ -117,46 +123,49 @@ QToolButton:menu-indicator {
 
 /* Toolbar Button Icons */
 
-#actionChange_Game,
-#actionInstallMod,
-#actionNexus,
-#actionAdd_Profile,
-#actionModify_Executables,
-#actionTool,
-#actionSettings,
-#actionProblems,
-#actionUpdate,
-#actionHelp {
-	qproperty-icon: none;
-	font-weight: bold;
-	font-size: 14px;
-}
-
-#actionChange_Game:hover,
-#actionInstallMod:hover,
-#actionNexus:hover,
-#actionAdd_Profile:hover,
-#actionModify_Executables:hover,
-#actionTool:hover,
-#actionSettings:hover,
-#actionProblems:hover,
-#actionUpdate:hover,
-#actionHelp:hover,
-#actionChange_Game:pressed,
-#actionInstallMod:pressed,
-#actionNexus:pressed,
-#actionAdd_Profile:pressed,
-#actionModify_Executables:pressed,
-#actionTool:pressed,
-#actionSettings:pressed,
-#actionProblems:pressed,
-#actionUpdate:pressed,
-#actionHelp:pressed {
-	qproperty-icon: none;
-}
-
 #actionChange_Game {
-	qproperty-text: "Instances";
+	qproperty-icon: url(./Paper/Dark/Toolbar/instances.svg);
+}
+
+#actionInstallMod {
+	qproperty-icon: url(./Paper/Dark/Toolbar/archives.svg);
+}
+
+#actionNexus {
+	qproperty-icon: url(./Paper/Dark/Toolbar/nexus.svg);
+}
+
+#actionAdd_Profile {
+	qproperty-icon: url(./Paper/Dark/Toolbar/profiles.svg);
+}
+
+#actionModify_Executables {
+	qproperty-icon: url(./Paper/Dark/Toolbar/executables.svg);
+}
+
+#actionTool {
+	qproperty-icon: url(./Paper/Dark/Toolbar/tools.svg);
+}
+
+#actionSettings {
+	qproperty-icon: url(./Paper/Dark/Toolbar/settings.svg);
+}
+
+#actionEndorseMO {
+	qproperty-icon: url(./Paper/Dark/Toolbar/endorse.svg);
+}
+
+#actionProblems,
+#actionNotifications {
+	qproperty-icon: url(./Paper/Dark/Toolbar/problems.svg);
+}
+
+#actionUpdate {
+	qproperty-icon: url(./Paper/Dark/Toolbar/update.svg);
+}
+
+#actionHelp {
+	qproperty-icon: url(./Paper/Dark/Toolbar/help.svg);
 }
 
 /* Group Boxes */
@@ -323,15 +332,19 @@ QPushButton::menu-indicator {
 	qproperty-iconSize: 14px;
 }
 
-/* Activate and Deactivate ESP Buttons */
+/* Optional ESPs Tab */
+
+#ESPsSplitter::handle {
+	background: transparent;
+}
 
 #deactivateESP {
-	qproperty-icon: url(./Paper/Mono/Black/backup.svg);
+	qproperty-icon: url(./Paper/Mono/Black/minus.svg);
 	border: 2px solid #3D3D3D;
 }
 
 #activateESP {
-	qproperty-icon: url(./Paper/Mono/Black/restore-alt.svg);
+	qproperty-icon: url(./Paper/Mono/Black/plus.svg);
 	border: 2px solid #3D3D3D;
 }
 
@@ -601,6 +614,7 @@ QTabBar::tab:selected {
 QTabBar::tab:hover {
 	/* Tabs when Moused-Over */
 	background: #5C5C5C;
+	color: #D3D3D3;
 }
 
 QTabBar QToolButton,
@@ -608,6 +622,24 @@ QTabBar QToolButton:disabled {
 	/* Buttons to Scroll between Tabs on the Information Dialog when the Dialog is too Small */
 	width: 0;
 	background: 0;
+}
+
+/* Nexus Info Tab */
+
+#refresh {
+	qproperty-icon: url(./Paper/Mono/Black/refresh.svg);
+}
+
+#visitNexus {
+	qproperty-icon: url(./Paper/Mono/Black/nexus.svg);
+}
+
+#track {
+	qproperty-icon: url(./Paper/Mono/Black/pin.svg);
+}
+
+#endorseBtn {
+	qproperty-icon: url(./Paper/Mono/Black/heart.svg);
 }
 
 /* Checkboxes */
@@ -799,6 +831,28 @@ QProgressBar[downloadView=compact] {
 #categoriesGroup {
 	/* Categories group box */
 	padding-bottom: 0;
+}
+
+/* Modify Executables Dialog */
+
+#EditExecutablesDialog #add {
+    qproperty-icon: url(./Paper/Dark/plus.svg);
+}
+
+#EditExecutablesDialog #remove {
+    qproperty-icon: url(./Paper/Dark/minus.svg);
+}
+
+#EditExecutablesDialog #up {
+    qproperty-icon: url(./Paper/Dark/Arrows/Large/up.svg);
+}
+
+#EditExecutablesDialog #down {
+    qproperty-icon: url(./Paper/Dark/Arrows/Large/down.svg);
+}
+
+#EditExecutablesDialog #reset {
+    qproperty-icon: url(./Paper/Dark/cross.svg);
 }
 
 /* Splitters */
