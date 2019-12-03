@@ -1,6 +1,8 @@
 # Paper Mono
 
 ![](https://i.imgur.com/Jll0WEA.png)
+![](https://staticdelivery.nexusmods.com/mods/110/images/64439/64439-1575343021-1979215660.png)
+![](https://staticdelivery.nexusmods.com/mods/110/images/64439/64439-1575343022-94354463.png)
 
 ## Installation
 
