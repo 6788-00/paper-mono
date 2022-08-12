@@ -1,3 +1,4 @@
+/* Version 3.2 by 6788 */
 QWidget {
   background: #FFF;
   font-size: 13px;
@@ -20,9 +21,9 @@ QTreeView, QListView {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000; }
   QTreeView::branch:closed:has-children:has-siblings, QTreeView::branch:closed:has-children:!has-siblings, QListView::branch:closed:has-children:has-siblings, QListView::branch:closed:has-children:!has-siblings {
-    image: url("./Paper/Mono/White/Arrows/right.svg"); }
+    image: url("./Paper/Light/Arrows/right.svg"); }
   QTreeView::branch:open:has-children:has-siblings, QTreeView::branch:open:has-children:!has-siblings, QListView::branch:open:has-children:has-siblings, QListView::branch:open:has-children:!has-siblings {
-    image: url("./Paper/Mono/White/Arrows/down.svg"); }
+    image: url("./Paper/Light/Arrows/down.svg"); }
 
 QHeaderView::up-arrow, QHeaderView::down-arrow {
   padding-right: 4px;
@@ -30,10 +31,10 @@ QHeaderView::up-arrow, QHeaderView::down-arrow {
   width: 10px; }
 
 QHeaderView::up-arrow {
-  image: url("./Paper/Mono/White/Arrows/up.svg"); }
+  image: url("./Paper/Light/Arrows/up.svg"); }
 
 QHeaderView::down-arrow {
-  image: url("./Paper/Mono/White/Arrows/down.svg"); }
+  image: url("./Paper/Light/Arrows/down.svg"); }
 
 QHeaderView::section {
   background: #FFF;
@@ -43,18 +44,17 @@ QHeaderView::section {
   QHeaderView::section:hover {
     background: #C2C2C2; }
 
-QScrollBar:vertical, QScrollBar:horizontal {
-  width: 20px; }
-
 QScrollBar:horizontal {
+  height: 20px;
   margin: 0 25px -2px 25px; }
 
 QScrollBar:vertical {
-  margin: 25px -2px 25px 0; }
+  width: 20px;
+  margin: 27px -2px 25px 0; }
 
 QScrollBar::handle {
   background: #C2C2C2;
-  border-radius: 6px;
+  border-radius: 8px;
   margin: 2px; }
   QScrollBar::handle:horizontal {
     min-width: 32px; }
@@ -68,11 +68,11 @@ QScrollBar::add-line {
   border: 2px solid #FFF;
   margin: 0 -2px -2px 0; }
   QScrollBar::add-line:horizontal {
-    image: url("./Paper/Mono/White/Arrows/right.svg");
+    image: url("./Paper/Light/Arrows/right.svg");
     width: 23px;
     subcontrol-position: right; }
   QScrollBar::add-line:vertical {
-    image: url("./Paper/Mono/White/Arrows/down.svg");
+    image: url("./Paper/Light/Arrows/down.svg");
     height: 23px;
     subcontrol-position: bottom;
     border-top: 2px solid #000; }
@@ -82,13 +82,13 @@ QScrollBar::add-line {
 QScrollBar::sub-line {
   subcontrol-origin: margin; }
   QScrollBar::sub-line:horizontal {
-    image: url("./Paper/Mono/White/Arrows/left.svg");
+    image: url("./Paper/Light/Arrows/left.svg");
     width: 23px;
     subcontrol-position: left;
     border: 2px solid #FFF;
     margin: 0 0 -2px -2px; }
   QScrollBar::sub-line:vertical {
-    image: url("./Paper/Mono/White/Arrows/up.svg");
+    image: url("./Paper/Light/Arrows/up.svg");
     height: 25px;
     subcontrol-position: top;
     border: 2px solid #FFF;
@@ -97,7 +97,7 @@ QScrollBar::sub-line {
   QScrollBar::sub-line:hover, QScrollBar::sub-line:pressed {
     background: #C2C2C2; }
 
-QScrollBar::add-page:horizontal, QScrollBar::add-page:vertical, QScrollBar::sub-page:horizontal, QScrollBar::sub-page:vertical {
+QScrollBar::add-page, QScrollBar::sub-page {
   background: transparent; }
 
 QPushButton, QToolButton {
@@ -108,7 +108,7 @@ QPushButton, QToolButton {
   border-radius: 10px;
   margin: 2px 0; }
   QPushButton::menu-indicator, QToolButton::menu-indicator {
-    image: url("./Paper/Mono/White/Arrows/down.svg");
+    image: url("./Paper/Light/Arrows/down.svg");
     padding: 2px;
     margin: 4px; }
   QPushButton:hover, QPushButton:pressed, QPushButton:disabled, QToolButton:hover, QToolButton:pressed, QToolButton:disabled {
@@ -138,11 +138,11 @@ QMenu {
   QMenu::icon {
     padding-left: 20px; }
   QMenu::right-arrow {
-    image: url("./Paper/Mono/White/Arrows/right.svg");
+    image: url("./Paper/Light/Arrows/right.svg");
     padding-right: 5px; }
   QMenu::item {
     background: transparent;
-    padding: 5px 20px 5px 24px; }
+    padding: 5px 20px; }
     QMenu::item:disabled {
       background: #FFF;
       color: #808080; }
@@ -151,35 +151,32 @@ QMenu {
 
 QToolBar {
   background: #FFF;
-  border: 1px solid #FFF; }
+  border-bottom: 2px solid #000;
+  qproperty-movable: true; }
   QToolBar::handle {
-    height: 0;
-    border: 1px solid #FFF; }
+    width: 2px;
+    height: 2px;
+    background: #FFF; }
   QToolBar::separator {
     background: #FFF;
     margin: 6px 8px; }
   QToolBar:menu-indicator {
-    image: url("./Paper/Mono/White/Arrows/down.svg");
+    image: url("./Paper/Light/Arrows/down.svg");
     margin: 4px; }
-
-#toolBar {
-  border-bottom: 2px solid #000;
-  margin: 0 12px;
-  qproperty-movable: true; }
-  #toolBar::handle {
-    width: 0; }
-  #toolBar QWidget {
-    background: none; }
-  #toolBar QToolButton {
+  QToolBar QWidget {
+    background: transparent; }
+  QToolBar QToolButton {
     padding: 4px;
     border-radius: 10px;
     border: 0;
     margin: 6px; }
-    #toolBar QToolButton:hover, #toolBar QToolButton:pressed {
+    QToolBar QToolButton:hover, QToolBar QToolButton:pressed {
       background: #C2C2C2; }
-    #toolBar QToolButton:menu-indicator {
+    QToolBar QToolButton:menu-indicator {
       margin: -4px;
       subcontrol-position: center bottom; }
+    QToolBar QToolButton:disabled {
+      background: transparent; }
 
 QLineEdit, QComboBox {
   min-height: 20px;
@@ -203,7 +200,7 @@ QComboBox {
     subcontrol-position: top right;
     border: none; }
   QComboBox::down-arrow {
-    image: url("./Paper/Mono/White/Arrows/down.svg"); }
+    image: url("./Paper/Light/Arrows/down.svg"); }
 
 QGroupBox {
   padding: 24px 4px;
@@ -218,13 +215,21 @@ QProgressBar {
   background: #FFF;
   color: #FFF;
   text-align: center;
-  border: 2px solid #FFF;
-  border-radius: 6px;
+  padding: 2px;
+  border: 2px solid #000;
+  border-radius: 10px;
   margin: 0 10px; }
   QProgressBar::chunk {
     background: #000;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px; }
+  QProgressBar[downloadView=standard] {
+    background: transparent;
+    margin: 11px 0; }
+  QProgressBar[downloadView=compact] {
+    background: transparent; }
+  QProgressBar[downloadView=standard]::chunk, QProgressBar[downloadView=compact]::chunk {
+    border-right: 2px solid #FFF; }
 
 QTabWidget::pane {
   border-top: 2px solid #000;
@@ -256,8 +261,8 @@ QTabBar::tab {
 
 QDockWidget {
   background: transparent;
-  titlebar-close-icon: url("./Paper/Mono/White/cross.svg");
-  titlebar-normal-icon: url("./Paper/Mono/White/Arrows/Large/up.svg");
+  titlebar-close-icon: url("./Paper/Light/cross.svg");
+  titlebar-normal-icon: url("./Paper/Light/Arrows/Large/up.svg");
   border: 0;
   padding: 0 10px; }
   QDockWidget::close-button, QDockWidget::float-button {
@@ -305,6 +310,10 @@ QueryOverwriteDialog QPushButton {
   icon: url("./Paper/Light/Toolbar/archives.svg");
   qproperty-icon: url("./Paper/Light/Toolbar/archives.svg"); }
 
+#actionModPage {
+  icon: url("./Paper/Light/Toolbar/globe.svg");
+  qproperty-icon: url("./Paper/Light/Toolbar/globe.svg"); }
+
 #actionNexus {
   icon: url("./Paper/Light/Toolbar/nexus.svg");
   qproperty-icon: url("./Paper/Light/Toolbar/nexus.svg"); }
@@ -350,47 +359,46 @@ QueryOverwriteDialog QPushButton {
   qproperty-icon: url("./Paper/Light/Toolbar/help.svg"); }
 
 #listOptionsBtn {
-  icon: url("./Paper/Mono/White/dots.svg");
-  qproperty-icon: url("./Paper/Mono/White/dots.svg");
-  qproperty-iconSize: 16px;
-  padding-left: 2px; }
+  padding-left: 2px;
+  icon: url("./Paper/Light/dots.svg");
+  qproperty-icon: url("./Paper/Light/dots.svg"); }
 
 #openFolderMenu {
-  icon: url("./Paper/Mono/White/folder.svg");
-  qproperty-icon: url("./Paper/Mono/White/folder.svg");
-  qproperty-iconSize: 14px;
-  padding-left: 4px; }
+  padding-left: 4px;
+  icon: url("./Paper/Light/folder.svg");
+  qproperty-icon: url("./Paper/Light/folder.svg");
+  icon-size: 14px; }
 
 #restoreModsButton, #restoreButton {
-  icon: url("./Paper/Mono/White/restore.svg");
-  qproperty-icon: url("./Paper/Mono/White/restore.svg");
-  qproperty-iconSize: 14px; }
+  icon: url("./Paper/Light/restore.svg");
+  qproperty-icon: url("./Paper/Light/restore.svg");
+  icon-size: 14px; }
 
 #saveModsButton, #saveButton {
-  icon: url("./Paper/Mono/White/backup.svg");
-  qproperty-icon: url("./Paper/Mono/White/backup.svg");
-  qproperty-iconSize: 14px; }
+  icon: url("./Paper/Light/backup.svg");
+  qproperty-icon: url("./Paper/Light/backup.svg");
+  icon-size: 14px; }
 
 #clearFiltersButton {
   icon: url("./Paper/Mono/White/cross.svg");
   qproperty-icon: url("./Paper/Mono/White/cross.svg"); }
 
 #bossButton {
-  icon: url("./Paper/Mono/White/sort.svg");
-  qproperty-icon: url("./Paper/Mono/White/sort.svg");
-  qproperty-iconSize: 14px; }
+  icon: url("./Paper/Light/sort.svg");
+  qproperty-icon: url("./Paper/Light/sort.svg");
+  icon-size: 14px; }
 
 #refreshButton, #btnRefreshData,
 #dataTabRefresh, #btnRefreshDownloads {
-  icon: url("./Paper/Mono/White/refresh.svg");
-  qproperty-icon: url("./Paper/Mono/White/refresh.svg");
-  qproperty-iconSize: 14px; }
+  icon: url("./Paper/Light/refresh.svg");
+  qproperty-icon: url("./Paper/Light/refresh.svg");
+  icon-size: 14px; }
 
 #clearCacheButton, #revokeNexusAuthButton,
 #nexusDisconnect {
-  icon: url("./Paper/Mono/White/cross.svg");
-  qproperty-icon: url("./Paper/Mono/White/cross.svg");
-  qproperty-iconSize: 14px; }
+  icon: url("./Paper/Light/cross.svg");
+  qproperty-icon: url("./Paper/Light/cross.svg");
+  icon-size: 14px; }
 
 #deactivateESP {
   icon: url("./Paper/Light/minus.svg");
@@ -407,7 +415,6 @@ QueryOverwriteDialog QPushButton {
 #startButton {
   icon: url("./Paper/Mono/White/run.svg");
   qproperty-icon: url("./Paper/Mono/White/run.svg");
-  qproperty-iconSize: 30px;
   padding: 6px;
   border-radius: 0;
   border-top-left-radius: 10px;
@@ -419,28 +426,28 @@ QueryOverwriteDialog QPushButton {
   margin-right: 8px; }
 
 #linkButton {
-  icon: url("./Paper/Mono/White/shortcut.svg");
-  qproperty-icon: url("./Paper/Mono/White/shortcut.svg");
-  qproperty-iconSize: 14px;
+  icon: url("./Paper/Light/shortcut.svg");
+  qproperty-icon: url("./Paper/Light/shortcut.svg");
+  icon-size: 14px;
   border-radius: 0;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px; }
 
 #refresh {
-  icon: url("./Paper/Mono/White/refresh.svg");
-  qproperty-icon: url("./Paper/Mono/White/refresh.svg"); }
+  icon: url("./Paper/Light/refresh.svg");
+  qproperty-icon: url("./Paper/Light/refresh.svg"); }
 
 #visitNexus {
-  icon: url("./Paper/Mono/White/nexus.svg");
-  qproperty-icon: url("./Paper/Mono/White/nexus.svg"); }
+  icon: url("./Paper/Light/nexus.svg");
+  qproperty-icon: url("./Paper/Light/nexus.svg"); }
 
 #track {
-  icon: url("./Paper/Mono/White/pin.svg");
-  qproperty-icon: url("./Paper/Mono/White/pin.svg"); }
+  icon: url("./Paper/Light/pin.svg");
+  qproperty-icon: url("./Paper/Light/pin.svg"); }
 
 #endorse {
-  icon: url("./Paper/Mono/White/heart.svg");
-  qproperty-icon: url("./Paper/Mono/White/heart.svg");
+  icon: url("./Paper/Light/heart.svg");
+  qproperty-icon: url("./Paper/Light/heart.svg");
   qproperty-iconSize: 14px; }
 
 QAbstractScrollArea::corner {
@@ -467,17 +474,17 @@ QTreeView::indicator, QCheckBox::indicator, QGroupBox::indicator, QRadioButton::
   width: 14px;
   height: 14px; }
   QTreeView::indicator:unchecked, QCheckBox::indicator:unchecked, QGroupBox::indicator:unchecked, QRadioButton::indicator:unchecked {
-    image: url("./Paper/Mono/White/Checkboxes/Unchecked/unchecked.svg"); }
+    image: url("./Paper/Light/Checkboxes/Unchecked/unchecked.svg"); }
     QTreeView::indicator:unchecked:hover, QCheckBox::indicator:unchecked:hover, QGroupBox::indicator:unchecked:hover, QRadioButton::indicator:unchecked:hover {
       image: url("./Paper/Mono/White/Checkboxes/Unchecked/hover.svg"); }
     QTreeView::indicator:unchecked:selected, QCheckBox::indicator:unchecked:selected, QGroupBox::indicator:unchecked:selected, QRadioButton::indicator:unchecked:selected {
-      image: url("./Paper/Mono/White/Checkboxes/Unchecked/selected.svg"); }
+      image: url("./Paper/Light/Checkboxes/Unchecked/selected.svg"); }
   QTreeView::indicator:checked, QCheckBox::indicator:checked, QGroupBox::indicator:checked, QRadioButton::indicator:checked {
     image: url("./Paper/Mono/White/Checkboxes/Checked/check.svg"); }
     QTreeView::indicator:checked:selected, QCheckBox::indicator:checked:selected, QGroupBox::indicator:checked:selected, QRadioButton::indicator:checked:selected {
-      image: url("./Paper/Mono/White/Checkboxes/Checked/selected.svg"); }
+      image: url("./Paper/Light/Checkboxes/Checked/selected.svg"); }
   QTreeView::indicator:disabled, QCheckBox::indicator:disabled, QGroupBox::indicator:disabled, QRadioButton::indicator:disabled {
-    image: url("./Paper/Mono/White/Checkboxes/disabled.svg"); }
+    image: url("./Paper/Light/Checkboxes/disabled.svg"); }
 
 QRadioButton::indicator:checked {
   image: url("./Paper/Mono/White/Checkboxes/Radio Buttons/radio.svg");
@@ -511,9 +518,9 @@ QSpinBox, QDoubleSpinBox {
     QSpinBox::down-button:hover, QDoubleSpinBox::down-button:hover {
       background: #C2C2C2; }
   QSpinBox::up-arrow, QDoubleSpinBox::up-arrow {
-    image: url("./Paper/Mono/White/Arrows/up.svg"); }
+    image: url("./Paper/Light/Arrows/up.svg"); }
   QSpinBox::down-arrow, QDoubleSpinBox::down-arrow {
-    image: url("./Paper/Mono/White/Arrows/down.svg"); }
+    image: url("./Paper/Light/Arrows/down.svg"); }
 
 QSlider::groove {
   height: 0;
@@ -548,37 +555,24 @@ QSlider::handle {
     background: #C2C2C2; }
 
 #EditExecutablesDialog #add {
+  icon: url("./Paper/Light/plus.svg");
   qproperty-icon: url("./Paper/Light/plus.svg"); }
 
 #EditExecutablesDialog #remove {
+  icon: url("./Paper/Light/minus.svg");
   qproperty-icon: url("./Paper/Light/minus.svg"); }
 
 #EditExecutablesDialog #up {
+  icon: url("./Paper/Light/Arrows/Large/up.svg");
   qproperty-icon: url("./Paper/Light/Arrows/Large/up.svg"); }
 
 #EditExecutablesDialog #down {
+  icon: url("./Paper/Light/Arrows/Large/down.svg");
   qproperty-icon: url("./Paper/Light/Arrows/Large/down.svg"); }
 
 #EditExecutablesDialog #reset {
+  icon: url("./Paper/Light/cross.svg");
   qproperty-icon: url("./Paper/Light/cross.svg"); }
-
-DownloadListWidget[downloadView=standard]::item {
-  min-height: 48px;
-  margin: -16px 0; }
-
-DownloadListWidget[downloadView=compact]::item {
-  min-height: 24px;
-  margin: -4px 0; }
-
-QProgressBar[downloadView=standard] {
-  background: transparent;
-  margin: 11px 0; }
-
-QProgressBar[downloadView=compact] {
-  background: transparent; }
-
-QProgressBar[downloadView=standard]::chunk, QProgressBar[downloadView=compact]::chunk {
-  border-right: 2px solid #FFF; }
 
 QLCDNumber {
   color: #000;
@@ -634,3 +628,7 @@ QTreeWidget#filters, #categoriesList {
 #colorTable {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000; }
+
+#iconLabel {
+  image: url("./Paper/Light/logo.svg");
+  qproperty-pixmap: none; }
